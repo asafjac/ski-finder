@@ -6,7 +6,7 @@ export interface Resort {
   PricesInfo: PricesInfo;
 }
 export interface HotelDescriptiveContent {
-  Images?: ImagesEntity[] | null;
+  Images: ImagesEntity[];
 }
 export interface ImagesEntity {
   MainImage?: boolean | null;

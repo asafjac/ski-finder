@@ -5,12 +5,32 @@ export const ResortsContext = createContext<{
   resorts: Resort[];
   addResorts: (resorts: Resort[]) => void;
   resetResorts: () => void;
-}>({ resorts: [], addResorts: () => {}, resetResorts: () => {} });
+  skiSiteId?: number;
+  setSkiSiteId: (name: number) => void;
+  startDate?: Date;
+  setStartDate: (date: Date) => void;
+  endDate?: Date;
+  setEndDate: (date: Date) => void;
+  groupSize?: number;
+  setGroupSize: (groupSize: number) => void;
+}>({
+  resorts: [],
+  addResorts: () => {},
+  resetResorts: () => {},
+  setSkiSiteId: () => {},
+  setStartDate: () => {},
+  setEndDate: () => {},
+  setGroupSize: () => {},
+});
 
 export const ResortsContextProvider: FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [resorts, setResorts] = useState<Resort[]>([]);
+  const [skiSiteId, setSkiSiteId] = useState<number>();
+  const [startDate, setStartDate] = useState<Date>();
+  const [endDate, setEndDate] = useState<Date>();
+  const [groupSize, setGroupSize] = useState<number>();
 
   const addResorts = (resorts) => {
     setResorts((oldResorts) =>
@@ -25,7 +45,21 @@ export const ResortsContextProvider: FC<{ children: ReactNode }> = ({
   };
 
   return (
-    <ResortsContext.Provider value={{ resorts, addResorts, resetResorts }}>
+    <ResortsContext.Provider
+      value={{
+        resorts,
+        addResorts,
+        resetResorts,
+        skiSiteId,
+        setSkiSiteId,
+        startDate,
+        setStartDate,
+        endDate,
+        setEndDate,
+        groupSize,
+        setGroupSize,
+      }}
+    >
       {children}
     </ResortsContext.Provider>
   );
