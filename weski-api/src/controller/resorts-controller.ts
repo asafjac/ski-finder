@@ -3,6 +3,7 @@ import { searchResorts } from "../manager/resorts-manager";
 import { maxGroupSize, minGroupSize, resorts } from "../consts";
 
 export const getSearchedResorts = async (req: Request, res: Response) => {
+  console.log(req.body);
   const { skiSite, fromDate, toDate, groupSize } = req.body;
 
   const resortIds = resorts.map(({ id }) => id);

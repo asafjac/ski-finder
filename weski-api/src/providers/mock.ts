@@ -1,5 +1,6 @@
 import { maxGroupSize } from "../consts";
 import axios from "axios";
+import { env } from "process";
 
 export const searchResortsInMock = async (
   skiSite: number,
@@ -14,6 +15,7 @@ export const searchResortsInMock = async (
     to_date: toDate,
   };
 
+  const providerUrl = env.MOCK_PROVIDER_URL!;
   for (
     let currGroupSize = groupSize;
     currGroupSize <= maxGroupSize;
@@ -21,10 +23,9 @@ export const searchResortsInMock = async (
   ) {
     sendToClient(
       (
-        await axios.post(
-          "https://gya7b1xubh.execute-api.eu-west-2.amazonaws.com/default/HotelsSimulator",
-          { query: { ...bodyFormat, group_size: currGroupSize } },
-        )
+        await axios.post(providerUrl, {
+          query: { ...bodyFormat, group_size: currGroupSize },
+        })
       ).data.body.accommodations,
     );
   }

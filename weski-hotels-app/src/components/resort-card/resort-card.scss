@@ -1,0 +1,112 @@
+
+.resort-card {
+	width: 100%;
+	max-width: 900px;
+	background: white;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+	transition: all 0.3s ease;
+	cursor: pointer;
+	display: flex;
+	align-items: stretch;
+
+	&:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+
+		.resort-card__image {
+			transform: scale(1.05);
+		}
+	}
+
+	&__image-container {
+		position: relative;
+		overflow: hidden;
+		flex: 0 0 400px;
+		height: 250px;
+	}
+
+	&__image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+
+	&__content {
+		padding: 20px;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	&__title {
+		font-size: 20px;
+		font-weight: 600;
+		color: #1a1a1a;
+		margin: 0;
+		line-height: 1.3;
+	}
+
+	&__rating {
+		display: flex;
+		align-items: center;
+		gap: 2px;
+		flex-shrink: 0;
+	}
+
+	&__location {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		margin-bottom: 16px;
+	}
+
+	&__location-icon {
+		color: #9ca3af;
+		flex-shrink: 0;
+	}
+
+	&__location-text {
+		color: #6b7280;
+		font-size: 14px;
+		font-weight: 500;
+	}
+
+	&__price {
+		display: flex;
+		align-items: baseline;
+		gap: 2px;
+		margin-top: auto;
+		margin-left: auto;
+	}
+
+	&__price-amount {
+		font-size: 24px;
+		font-weight: 700;
+		color: #1a1a1a;
+	}
+
+	&__price-unit {
+		font-size: 14px;
+		color: #9ca3af;
+		font-weight: 500;
+	}
+}
+
+.star {
+	color: #e5e7eb;
+	fill: currentColor;
+
+	&--filled {
+		color: #fbbf24;
+	}
+}
