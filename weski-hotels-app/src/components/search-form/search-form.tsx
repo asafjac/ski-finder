@@ -14,15 +14,6 @@ const SearchForm: React.FC = () => {
   const [endDate, setEndDate] = useState<Date | null>(
     dayjs().add(7, "days").toDate(),
   );
-  const [resorts, setResorts] = useState([]);
-
-  const addResorts = (resorts) => {
-    setResorts((oldResorts) =>
-      [...oldResorts, ...resorts].sort(
-        (a, b) => a.PricesInfo.AmountAfterTax - b.PricesInfo.AmountAfterTax,
-      ),
-    );
-  };
 
   return (
     <div className="search-form">

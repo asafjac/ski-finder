@@ -1,11 +1,12 @@
 import { SSE } from "sse.js";
+import { Resort } from "../types.ts";
 
 export const searchResorts = (
   skiSite: number,
   fromDate: Date,
   toDate: Date,
   groupSize: number,
-  addResorts: (resorts: unknown) => void,
+  addResorts: (resorts: Resort[]) => void,
 ): void => {
   const source = new SSE(`${import.meta.env.VITE_SERVER_URL}/resorts/search`, {
     headers: { "Content-Type": "application/json" },
