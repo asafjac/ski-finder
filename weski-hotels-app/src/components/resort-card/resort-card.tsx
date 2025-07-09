@@ -1,5 +1,6 @@
 import React from "react";
-import { MapPin, Star } from "lucide-react";
+import { MapPinned, Star } from "lucide-react";
+
 import "./resort-card.scss";
 
 interface ResortCardProps {
@@ -42,7 +43,7 @@ const ResortCard: React.FC<ResortCardProps> = ({
         <div className="resort-card__rating">{renderStars()}</div>
 
         <div className="resort-card__location">
-          <MapPin className="resort-card__location-icon" size={14} />
+          <MapPinned className="resort-card__location-icon" size={14} />
           <span className="resort-card__location-text">{location}</span>
         </div>
 
