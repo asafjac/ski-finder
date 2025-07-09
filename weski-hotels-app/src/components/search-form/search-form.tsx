@@ -7,7 +7,6 @@ import DatePicker from "react-datepicker";
 import dayjs from "dayjs";
 import { searchResorts } from "../../queries/search-resorts.ts";
 import { ResortsContext } from "../../contexts/resorts-contexts.tsx";
-import { skiSites } from "../../consts.ts";
 
 const SearchForm: React.FC = () => {
   const [skiSiteId, setSkiSiteId] = useState<number>(1);
